@@ -14,6 +14,7 @@
 		21EF1F411A81FB1A00B7EF5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EF1F401A81FB1A00B7EF5B /* Images.xcassets */; };
 		21EF1F441A81FB1A00B7EF5B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21EF1F421A81FB1A00B7EF5B /* LaunchScreen.xib */; };
 		21EF1F501A81FB1A00B7EF5B /* LockScreenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EF1F4F1A81FB1A00B7EF5B /* LockScreenTests.m */; };
+		21EF1F5B1A81FB5E00B7EF5B /* LockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EF1F5A1A81FB5E00B7EF5B /* LockScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		21EF1F491A81FB1A00B7EF5B /* LockScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LockScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EF1F4E1A81FB1A00B7EF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21EF1F4F1A81FB1A00B7EF5B /* LockScreenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockScreenTests.m; sourceTree = "<group>"; };
+		21EF1F591A81FB5E00B7EF5B /* LockScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockScreen.h; sourceTree = "<group>"; };
+		21EF1F5A1A81FB5E00B7EF5B /* LockScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockScreen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				21EF1F381A81FB1A00B7EF5B /* AppDelegate.m */,
 				21EF1F3A1A81FB1A00B7EF5B /* ViewController.h */,
 				21EF1F3B1A81FB1A00B7EF5B /* ViewController.m */,
+				21EF1F591A81FB5E00B7EF5B /* LockScreen.h */,
+				21EF1F5A1A81FB5E00B7EF5B /* LockScreen.m */,
 				21EF1F3D1A81FB1A00B7EF5B /* Main.storyboard */,
 				21EF1F401A81FB1A00B7EF5B /* Images.xcassets */,
 				21EF1F421A81FB1A00B7EF5B /* LaunchScreen.xib */,
@@ -222,6 +227,7 @@
 				21EF1F3C1A81FB1A00B7EF5B /* ViewController.m in Sources */,
 				21EF1F391A81FB1A00B7EF5B /* AppDelegate.m in Sources */,
 				21EF1F361A81FB1A00B7EF5B /* main.m in Sources */,
+				21EF1F5B1A81FB5E00B7EF5B /* LockScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +418,7 @@
 				21EF1F551A81FB1A00B7EF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21EF1F561A81FB1A00B7EF5B /* Build configuration list for PBXNativeTarget "LockScreenTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				21EF1F581A81FB1A00B7EF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
