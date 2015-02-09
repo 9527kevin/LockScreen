@@ -18,7 +18,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
         [self configButtons];
     }
     return self;
@@ -133,7 +132,6 @@
     return nil;
 }
 - (void)drawRect:(CGRect)rect {
-    [self setBackgroundColor:[UIColor whiteColor]];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect);
     
