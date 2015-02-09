@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2160994D1A88583B00396348 /* GuestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160994C1A88583B00396348 /* GuestureView.m */; };
+		216099501A888C4400396348 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2160994E1A888C4400396348 /* lock.png */; };
+		216099511A888C4400396348 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2160994F1A888C4400396348 /* unlock.png */; };
 		21EF1F361A81FB1A00B7EF5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EF1F351A81FB1A00B7EF5B /* main.m */; };
 		21EF1F391A81FB1A00B7EF5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EF1F381A81FB1A00B7EF5B /* AppDelegate.m */; };
 		21EF1F3C1A81FB1A00B7EF5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EF1F3B1A81FB1A00B7EF5B /* ViewController.m */; };
@@ -28,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2160994B1A88583B00396348 /* GuestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestureView.h; path = ../GuestureView.h; sourceTree = "<group>"; };
+		2160994C1A88583B00396348 /* GuestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestureView.m; path = ../GuestureView.m; sourceTree = "<group>"; };
+		2160994E1A888C4400396348 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		2160994F1A888C4400396348 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
 		21EF1F301A81FB1A00B7EF5B /* LockScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EF1F341A81FB1A00B7EF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21EF1F351A81FB1A00B7EF5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,12 +91,16 @@
 		21EF1F321A81FB1A00B7EF5B /* LockScreen */ = {
 			isa = PBXGroup;
 			children = (
+				2160994E1A888C4400396348 /* lock.png */,
+				2160994F1A888C4400396348 /* unlock.png */,
 				21EF1F371A81FB1A00B7EF5B /* AppDelegate.h */,
 				21EF1F381A81FB1A00B7EF5B /* AppDelegate.m */,
 				21EF1F3A1A81FB1A00B7EF5B /* ViewController.h */,
 				21EF1F3B1A81FB1A00B7EF5B /* ViewController.m */,
 				21EF1F591A81FB5E00B7EF5B /* LockScreen.h */,
 				21EF1F5A1A81FB5E00B7EF5B /* LockScreen.m */,
+				2160994B1A88583B00396348 /* GuestureView.h */,
+				2160994C1A88583B00396348 /* GuestureView.m */,
 				21EF1F3D1A81FB1A00B7EF5B /* Main.storyboard */,
 				21EF1F401A81FB1A00B7EF5B /* Images.xcassets */,
 				21EF1F421A81FB1A00B7EF5B /* LaunchScreen.xib */,
@@ -204,6 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216099501A888C4400396348 /* lock.png in Resources */,
+				216099511A888C4400396348 /* unlock.png in Resources */,
 				21EF1F3F1A81FB1A00B7EF5B /* Main.storyboard in Resources */,
 				21EF1F441A81FB1A00B7EF5B /* LaunchScreen.xib in Resources */,
 				21EF1F411A81FB1A00B7EF5B /* Images.xcassets in Resources */,
@@ -225,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21EF1F3C1A81FB1A00B7EF5B /* ViewController.m in Sources */,
+				2160994D1A88583B00396348 /* GuestureView.m in Sources */,
 				21EF1F391A81FB1A00B7EF5B /* AppDelegate.m in Sources */,
 				21EF1F361A81FB1A00B7EF5B /* main.m in Sources */,
 				21EF1F5B1A81FB5E00B7EF5B /* LockScreen.m in Sources */,
@@ -306,6 +320,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -340,6 +355,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

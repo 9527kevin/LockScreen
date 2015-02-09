@@ -7,10 +7,15 @@
 //
 
 #import "LockScreen.h"
+#import "GuestureView.h"
 
-@interface LockScreen()
+@interface LockScreen()<GuestureDelegate>
+@property (nonatomic,strong)UIView * codeLockView;
+@property (nonatomic,strong)GuestureView * guestureView;
 @property (nonatomic,strong)UITextField * passwordField;
 @property (nonatomic,strong)UIButton * doneButton;
+@property (nonatomic,strong)UISegmentedControl * segment;
+
 @end
 @implementation LockScreen
 
@@ -24,6 +29,34 @@
     return unlockWindow;
 }
 
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.windowLevel = UIWindowLevelAlert;
+        [self setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+        [self configLockScreen];
+        
+    }
+    return self;
+}
+
+-(void)configLockScreen
+{
+    self.codeLockView.hidden = YES;
+    [self addSubview:self.codeLockView];
+    
+    self.guestureView = [[GuestureView alloc] initWithFrame:self.bounds];
+    self.guestureView.hidden = YES;
+    self.guestureView.delegate = self;
+    [self.guestureView setBackgroundColor:[UIColor whiteColor]];
+    [self addSubview:self.guestureView];
+    
+    self.segment = [[UISegmentedControl alloc] initWithItems:@[@"code lock",@"guesture lock"]];
+    [self.segment setFrame:CGRectMake(self.center.x - self.segment.frame.size.width/2,0, self.segment.frame.size.width, self.segment.frame.size.height)];
+    [self.segment addTarget:self action:@selector(chooseLockScreenType:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.segment];
+}
 -(void)show
 {
     [self makeKeyWindow];
@@ -31,16 +64,16 @@
     self.hidden = NO;
 }
 
--(instancetype)initWithFrame:(CGRect)frame
+#pragma mark - code lock view
+-(UIView *)codeLockView
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.windowLevel = UIWindowLevelAlert;
-        [self setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
-        [self addSubview:self.passwordField];
-        [self addSubview:self.doneButton];
+    if (!_codeLockView) {
+        _codeLockView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _codeLockView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [_codeLockView addSubview:self.passwordField];
+        [_codeLockView addSubview:self.doneButton];
     }
-    return self;
+    return _codeLockView;
 }
 -(UITextField *)passwordField
 {
@@ -65,6 +98,8 @@
     }
     return _doneButton;
 }
+
+
 #pragma mark - button status
 -(IBAction)tapButton:(id)sender
 {
@@ -79,6 +114,20 @@
         [alter show];
     }
 }
+-(void)chooseLockScreenType:(UISegmentedControl *)segment
+{
+    if(segment.selectedSegmentIndex == 0)
+    {
+        self.codeLockView.hidden = NO;
+        self.guestureView.hidden = YES;
+    }
+    else
+    {
+        self.codeLockView.hidden = YES;
+        self.guestureView.hidden = NO;
+    }
+}
+
 #pragma mark - text field delegate
 -(void)configConstrain
 {
@@ -98,5 +147,20 @@
     CGFloat middleHeight = [UIScreen mainScreen].bounds.size.height/2;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[passwordTextField(50)]-30-[doneButton(50)]-middleHeight-|" options:0 metrics:@{@"middleHeight":@(middleHeight)} views:NSDictionaryOfVariableBindings(passwordTextField,doneButton)]];
     
+}
+
+#pragma mark - delegate
+-(void)unlockFromGuesture:(BOOL)unlock
+{
+    if (unlock) {
+        [self resignKeyWindow];
+        self.hidden = YES;
+    }
+    else
+    {
+        UIAlertView * alter = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"password error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alter show];
+    }
+ 
 }
 @end
